@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:todo_firebase/app/modules/home/models/todo_model.dart';
 
@@ -7,7 +8,7 @@ import 'interfaces/todo_repository_interface.dart';
 class TodoRepository extends Disposable implements ITodoRepository {
   final Firestore firestore;
 
-  TodoRepository({this.firestore});
+  TodoRepository({@required this.firestore});
 
   //dispose will be called automatically
   @override
