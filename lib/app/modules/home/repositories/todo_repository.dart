@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:todo_firebase/app/modules/home/models/todo_model.dart';
+import '../models/todo_model.dart';
 
 import 'interfaces/todo_repository_interface.dart';
 
@@ -22,8 +22,17 @@ class TodoRepository extends Disposable implements ITodoRepository {
   }
 
   @override
+  Future<Stream<TodoModel>> getByDocumentId(String documentId) async {
+    return firestore
+        .collection('todo')
+        .document(documentId)
+        .snapshots()
+        .map((doc) => TodoModel.fromDocument(doc));
+  }
+
+  @override
   Future save(TodoModel model) async {
-    int total = (await Firestore.instance.collection('todo').getDocuments())
+    var total = (await Firestore.instance.collection('todo').getDocuments())
         .documents
         .length;
 

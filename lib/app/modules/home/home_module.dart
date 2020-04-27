@@ -1,12 +1,12 @@
-import 'package:todo_firebase/app/modules/home/services/todo_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:todo_firebase/app/modules/home/repositories/todo_repository.dart';
-import 'package:todo_firebase/app/modules/home/home_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:todo_firebase/app/modules/home/home_page.dart';
 
+import 'home_controller.dart';
+import 'home_page.dart';
 import 'repositories/interfaces/todo_repository_interface.dart';
+import 'repositories/todo_repository.dart';
 import 'services/interfaces/todo_service_interfaces.dart';
+import 'services/todo_service.dart';
 
 class HomeModule extends ChildModule {
   @override

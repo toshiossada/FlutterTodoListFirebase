@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:todo_firebase/app/modules/home/models/todo_model.dart';
-import 'package:todo_firebase/app/modules/home/repositories/interfaces/todo_repository_interface.dart';
+import '../models/todo_model.dart';
+import '../repositories/interfaces/todo_repository_interface.dart';
 
 import 'interfaces/todo_service_interfaces.dart';
 

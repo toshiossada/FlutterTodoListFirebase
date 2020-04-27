@@ -2,12 +2,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:dio/dio.dart';
 
-import 'package:todo_firebase/app/modules/home/repositories/todo_repository.dart';
-
 class MockClient extends Mock implements Dio {}
 
 void main() {
-  TodoRepository repository;
   // MockClient client;
 
   setUp(() {

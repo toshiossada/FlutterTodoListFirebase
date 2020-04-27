@@ -1,9 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:mobx/mobx.dart';
-import 'package:todo_firebase/app/modules/home/repositories/interfaces/todo_repository_interface.dart';
-import 'package:todo_firebase/app/modules/home/services/interfaces/todo_service_interfaces.dart';
 
 import 'models/todo_model.dart';
+import 'services/interfaces/todo_service_interfaces.dart';
 
 part 'home_controller.g.dart';
 
@@ -20,17 +19,17 @@ abstract class _HomeControllerBase with Store {
   }
 
   @action
-  getList() {
+  void getList() {
     todoList = todoService.get().asObservable();
   }
 
   @action
-  save(TodoModel model) {
+  void save(TodoModel model) {
     todoService.save(model);
   }
 
   @action
-  delete(TodoModel model) {
+  void delete(TodoModel model) {
     todoService.delete(model);
   }
 }

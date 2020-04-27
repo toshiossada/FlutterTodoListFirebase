@@ -22,23 +22,23 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         title: Text(widget.title),
       ),
       body: Observer(builder: (_) {
-        if (controller.todoList.data == null)
+        if (controller.todoList.data == null) {
           return Center(
             child: CircularProgressIndicator(),
           );
-        else if (controller.todoList.hasError)
+        } else if (controller.todoList.hasError) {
           return Center(
             child: RaisedButton(
-              onPressed: () => controller.getList(),
+              onPressed: controller.getList,
               child: Text('Error'),
             ),
           );
-        else {
+        } else {
           List<TodoModel> list = controller.todoList.data;
           return ListView.builder(
               itemCount: list.length,
               itemBuilder: (_, index) {
-                TodoModel model = list[index];
+                var model = list[index];
                 return ListTile(
                   onTap: () {
                     _showDialog(model: model);
